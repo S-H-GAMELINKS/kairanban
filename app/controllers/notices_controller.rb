@@ -28,6 +28,8 @@ class NoticesController < ApplicationController
     report.start_new_page
     # 以下で各カラムごとのデータを入れる
     report.page.item(:title).value(@notice.title)
+    report.page.item(:to).value(@notice.to)
+    report.page.item(:from).value(@notice.from)
     report.page.item(:auther).value(@notice.auther)
     report.page.item(:greet).value(@notice.greet)
     report.page.item(:content).value(@notice.content)
@@ -93,6 +95,6 @@ class NoticesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def notice_params
-      params.require(:notice).permit(:title, :auther, :greet, :content)
+      params.require(:notice).permit(:title, :to, :from, :auther, :greet, :content)
     end
 end
