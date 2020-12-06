@@ -6,15 +6,15 @@
       "type": "text-block",
       "display": true,
       "description": "",
-      "x": 145.6,
-      "y": 45,
-      "width": 304,
+      "x": 143.6,
+      "y": 44,
+      "width": 400,
       "height": 53.6,
       "style": {
         "font-family": [
           "Helvetica"
         ],
-        "font-size": 48,
+        "font-size": 20,
         "color": "#000000",
         "text-align": "center",
         "vertical-align": "top",
