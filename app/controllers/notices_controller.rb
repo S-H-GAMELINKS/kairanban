@@ -1,5 +1,6 @@
 class NoticesController < ApplicationController
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
+  before_action :set_pdf_notice, only: [:show_pdf]
 
   # GET /notices
   # GET /notices.json
@@ -19,6 +20,25 @@ class NoticesController < ApplicationController
 
   # GET /notices/1/edit
   def edit
+  end
+
+  def show_pdf
+    report = Thinreports::Report.new(layout: "#{Rails.root}/app/pdfs/kairanban_default.tlf")
+
+    report.start_new_page
+    # 以下で各カラムごとのデータを入れる
+    report.page.item(:title).value(@notice.title)
+    report.page.item(:auther).value(@notice.auther)
+    report.page.item(:greet).value(@notice.greet)
+    report.page.item(:content).value(@notice.content)
+
+    file = report.generate
+    send_data(
+      file,
+      filename: "#{@notice.title}.pdf",
+      type: 'application/pdf',
+      disposition: 'inline'
+    )
   end
 
   # POST /notices
@@ -65,6 +85,10 @@ class NoticesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_notice
       @notice = Notice.find(params[:id])
+    end
+
+    def set_pdf_notice
+      @notice = Notice.find(params[:notice_id])
     end
 
     # Only allow a list of trusted parameters through.

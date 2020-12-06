@@ -21,6 +21,7 @@
         <td><%= notice.greet %></td>
         <td><%= notice.content %></td>
         <td><%= link_to 'Show', notice %></td>
+        <td><%= link_to 'ShowPDF', notice_show_pdf_path(notice) %></td>
         <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
         <td><%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
