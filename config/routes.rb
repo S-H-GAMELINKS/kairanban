@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'web/index'
-  get 'web/about'
-  get 'web/contact'
+  root 'web#index'
+  get '/about', to: 'web#about'
+  get '/contact', to: 'web#contact'
   devise_for :users
   resources :notices do
     get :show_pdf
