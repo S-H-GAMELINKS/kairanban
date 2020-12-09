@@ -1,6 +1,7 @@
 class NoticesController < ApplicationController
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
   before_action :set_pdf_notice, only: [:show_pdf]
+  before_action :authenticate_user!
 
   # GET /notices
   # GET /notices.json
