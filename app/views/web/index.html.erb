@@ -2,7 +2,9 @@
   <div class="col-md-5 p-lg-5 mx-auto my-6">
     <h1 class="display-4 font-weight-normal">かいらんばん</h1>
     <p class="lead font-weight-normal">町内会のお知らせなどを簡単に作れるサービスです!</p>
-    <a class="btn btn-outline-info" href="/users/sign_up">アカウントを作成してお知らせを作ってみる</a>
+    <% if !user_signed_in? %>
+        <a class="btn btn-outline-info" href="/users/sign_up">アカウントを作成してお知らせを作ってみる</a>
+    <% end %>
   </div>
   <div class="product-device shadow-sm d-none d-md-block"></div>
   <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
