@@ -1,34 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="container mt-md-3">
+  <div class="h2">
+    お知らせ一覧
+  </div>
 
-<h1>Notices</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Auther</th>
-      <th>Greet</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <p id="notice"><%= notice %></p>
+  <div class="row">
     <% @notices.each do |notice| %>
-      <tr>
-        <td><%= notice.title %></td>
-        <td><%= notice.auther %></td>
-        <td><%= notice.greet %></td>
-        <td><%= notice.content %></td>
-        <td><%= link_to 'Show', notice %></td>
-        <td><%= link_to 'ShowPDF', notice_show_pdf_path(notice) %></td>
-        <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
-        <td><%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= notice.title %></h5>
+            <p class="card-text"><%= notice.content %></p>
+            <div class="my-auto">
+              <%= link_to '確認', notice %>
+              <%= link_to '編集', edit_notice_path(notice) %>
+              <%= link_to '削除', notice, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
-<br>
-
-<%= link_to 'New Notice', new_notice_path %>
+  <div class="mt-md-3">
+    <%= link_to "新しいお知らせを作る", new_notice_path, class: "btn btn-info" %>
+  </div>
+</div>
