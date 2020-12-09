@@ -48,6 +48,7 @@ class NoticesController < ApplicationController
   # POST /notices.json
   def create
     @notice = Notice.new(notice_params)
+    @notice.user_id = current_user.id
 
     respond_to do |format|
       if @notice.save
