@@ -22,6 +22,10 @@
     <% end %>
   </div>
 
+  <div class="d-flex justify-content-center mt-md-5">
+    <%= paginate @notices %>
+  </div>
+
   <div class="mt-md-3">
     <%= link_to "新しいお知らせを作る", new_notice_path, class: "btn btn-info" %>
   </div>

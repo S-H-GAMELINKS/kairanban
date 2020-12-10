@@ -6,7 +6,7 @@ class NoticesController < ApplicationController
   # GET /notices
   # GET /notices.json
   def index
-    @notices = Notice.all
+    @notices = Notice.page params[:page]
   end
 
   # GET /notices/1
