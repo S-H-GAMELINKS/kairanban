@@ -1,24 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Title:</strong>
-  <%= @notice.title %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Auther:</strong>
-  <%= @notice.auther %>
-</p>
+  <div class="h3 text-left">
+    <%= @notice.to %>
+  </div>
 
-<p>
-  <strong>Greet:</strong>
-  <%= @notice.greet %>
-</p>
+  <div class="h3 text-right">
+    <p><%= @notice.from %></p>
+    <p><%= @notice.auther %></p>
+  </div>
+    
+  <div class="h1 text-center">
+    <%= @notice.title %>
+  </div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @notice.content %>
-</p>
+  <p class="lead text-center mt-md-5 mb-md-5">
+    <%= @notice.greet %>
+  </p>
 
-<%= link_to 'Edit', edit_notice_path(@notice) %> |
-<%= link_to 'Back', notices_path %>
+
+  <hr>
+
+  <div class="h1 text-center mt-md-5 mb-md-5">
+    記
+  </div>
+
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+    <p class="h3">
+      <%= @notice.content %>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-end">
+    <div class="mt-md-4">
+      <%= link_to 'お知らせを印刷する', notice_show_pdf_path(@notice), class: "btn btn-outline-info" %>
+
+      <p class="mt-md-4">
+        <%= link_to '編集', edit_notice_path(@notice) %> |
+        <%= link_to '戻る', notices_path %>
+      </p>
+    </div>
+  </div>
+</div>
