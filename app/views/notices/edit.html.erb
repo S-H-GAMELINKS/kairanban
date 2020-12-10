@@ -1,6 +1,8 @@
-<h1>Editing Notice</h1>
+<div class="h1 text-center mt-md-4">お知らせ内容の編集</div>
 
-<%= render 'form', notice: @notice %>
+<div class="container">
+    <%= render 'form', notice: @notice %>
 
-<%= link_to 'Show', @notice %> |
-<%= link_to 'Back', notices_path %>
+    <%= link_to '確認', @notice %> |
+    <%= link_to '戻る', notices_path %>
+</div>
