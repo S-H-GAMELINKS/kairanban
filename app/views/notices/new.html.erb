@@ -1,5 +1,6 @@
-<h1>New Notice</h1>
+<div class="h1 text-center mt-md-4">新しいお知らせを作成</div>
+<div class="container">
+    <%= render 'form', notice: @notice %>
 
-<%= render 'form', notice: @notice %>
-
-<%= link_to 'Back', notices_path %>
+    <%= link_to '戻る', notices_path %>
+</div>
