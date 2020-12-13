@@ -10,7 +10,9 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title"><%= notice.title %></h5>
-            <p class="card-text"><%= notice.content %></p>
+            <p class="card-text">
+              <%= truncate(notice.content, length: 20) %>
+            </p>
             <div class="my-auto">
               <%= link_to '確認', notice %>
               <%= link_to '編集', edit_notice_path(notice) %>
