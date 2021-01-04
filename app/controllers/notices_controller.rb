@@ -2,6 +2,7 @@ class NoticesController < ApplicationController
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
   before_action :set_pdf_notice, only: [:show_pdf]
   before_action :authenticate_user!
+  before_action :check_notice_user, only: [:show, :edit, :update, :destroy]
 
   # GET /notices
   # GET /notices.json
@@ -93,6 +94,12 @@ class NoticesController < ApplicationController
 
     def set_pdf_notice
       @notice = Notice.find(params[:notice_id])
+    end
+
+    def check_notice_user
+      if @notice.user_id != current_user.id
+        redirect_to notices_url, notice: 'そのお知らせにはアクセスできません'
+      end
     end
 
     # Only allow a list of trusted parameters through.
