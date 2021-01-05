@@ -19,21 +19,13 @@
     <hr>
 
     <div class="row">
-        <div class="col-md-4">
-            <h2>丸々町内会</h2>
-            <p>以前はWordで作っていました。PCになれていないので作るのが難しかったんですが、入力するだけでお知らせが作れるので非常に助かっています。</p>
-            <p><a class="btn btn-info" href="#" role="button">事例を見てみる</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>丸々町内会</h2>
-            <p>以前はWordで作っていました。PCになれていないので作るのが難しかったんですが、入力するだけでお知らせが作れるので非常に助かっています。</p>
-            <p><a class="btn btn-info" href="#" role="button">事例を見てみる</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>丸々町内会</h2>
-            <p>以前はWordで作っていました。PCになれていないので作るのが難しかったんですが、入力するだけでお知らせが作れるので非常に助かっています。</p>
-            <p><a class="btn btn-info" href="#" role="button">事例を見てみる</a></p>
-        </div>
+        <% @examples.each do |example| %>
+            <div class="col-md-4">
+                <h2><%= example.title %></h2>
+                <p><%= example.content %></p>
+                <p><a class="btn btn-info" href="#" role="button">事例を見てみる</a></p>
+            </div>
+        <% end %>
     </div>
 
     <hr>
