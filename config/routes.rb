@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :cases
   root 'web#index'
   get '/about', to: 'web#about'
   get '/contact', to: 'web#contact'
