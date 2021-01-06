@@ -23,7 +23,7 @@
             <div class="col-md-4">
                 <h2><%= example.title %></h2>
                 <p><%= example.content %></p>
-                <p><a class="btn btn-info" href="#" role="button">事例を見てみる</a></p>
+                <p><%= link_to "事例を見てみる", example_path(example), class: "btn btn-info" %></p>
             </div>
         <% end %>
     </div>
