@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'users/mypage'
-  get 'users/edit'
+  get '/mypage', to: 'users#mypage'
+  get '/mypage', to: 'users#edit'
   resources :examples
   root 'web#index'
   get '/about', to: 'web#about'
