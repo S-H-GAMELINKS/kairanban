@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'dashboard/index'
   devise_for :admins
   resources :examples
   root 'web#index'
   get '/about', to: 'web#about'
   get '/contact', to: 'web#contact'
+  get '/dashboard', to: 'dashboard#index'
   devise_for :users
   resources :notices do
     get :show_pdf
